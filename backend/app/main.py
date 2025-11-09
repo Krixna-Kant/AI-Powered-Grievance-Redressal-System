@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.routes import grievance
+from app.routes import grievance, analytics
+
 
 app = FastAPI(
     title="AI-Powered Grievance Management System",
@@ -20,7 +22,8 @@ app.add_middleware(
 
 #Routers
 app.include_router(grievance.router)
-# app.include_router(analytics.router)
+app.include_router(analytics.router)
+
 # app.include_router(chatbot.router)
 
 @app.get("/")
