@@ -1,18 +1,21 @@
 import joblib
 from prophet import Prophet
-from datetime import datetime
+import os
 from app.utils.aggregate_data import fetch_aggregated_data
 from app.db.connection import get_db
-import os
+from app.services.forecast_manager import update_forecast_cache
 
 def retrain_forecast_models():
-    """Retrain Prophet models if enough real grievance data exists."""
+    """
+    Retrains Prophet models using real grievance data if enough exists.
+    Falls back to trained dataset otherwise.
+    """
     db = next(get_db())
     df = fetch_aggregated_data(db)
 
     if df is None or len(df["date"].unique()) < 60:
-        print("Not enough real data for retraining. Using trained data model.")
-        return False
+        print("Not enough real data for retraining. Using pretrained dataset.")
+        return False  # This will trigger fallback to trained model
 
     categories = df["category"].unique()
     models = {}
@@ -25,10 +28,11 @@ def retrain_forecast_models():
         model.fit(df_cat)
         models[category] = model
 
-    # Save updated model
+    # Save retrained model
     os.makedirs("app/models/forecast", exist_ok=True)
-    model_path = f"app/models/forecast/up_forecast.pkl"
+    model_path = "app/models/forecast/up_forecast.pkl"
     joblib.dump(models, model_path)
+    update_forecast_cache(models)
 
     print(f"Retrained Prophet models saved at {model_path}")
     return True

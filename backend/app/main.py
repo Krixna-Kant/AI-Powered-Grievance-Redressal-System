@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.routes import grievance
 from app.routes import grievance, analytics
 from app.auth.routes import router as auth_router
+from app.services.forecast_manager import load_forecast_models, retrain_forecast_models_async
 
 
 app = FastAPI(
@@ -24,10 +25,18 @@ app.add_middleware(
 #Routers
 app.include_router(auth_router)
 app.include_router(grievance.router)
-# app.include_router(analytics.router)
+app.include_router(analytics.router)
 
 
 # app.include_router(chatbot.router)
+
+@app.on_event("startup")
+def startup_event():
+    print("Starting IGRS backend...")
+    load_forecast_models()
+    retrain_forecast_models_async()
+    
+
 
 @app.get("/")
 def root():
