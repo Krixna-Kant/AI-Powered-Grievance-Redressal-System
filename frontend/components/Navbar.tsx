@@ -18,13 +18,13 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
         <h1
           onClick={() => router.push("/")}
-          className="text-xl font-semibold text-gray-800 dark:text-white cursor-pointer hover:text-blue-600 dark:hover:text-blue-400 transition"
+          className="text-xl font-semibold text-gray-800 dark:text-white cursor-pointer hover:text-cyan-400 dark:hover:text-blue-400 transition"
         >
           Public Grievance Portal
         </h1>
 
         <div className="flex items-center gap-4">
-          <button className="flex items-center gap-1 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition">
+          <button className="flex items-center gap-1 text-gray-700 dark:text-gray-300 hover:text-cyan-400 transition">
             <Globe size={18} /> Eng / हिंदी
           </button>
           <button
