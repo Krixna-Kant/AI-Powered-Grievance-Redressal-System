@@ -1,4 +1,4 @@
-# AI-Powered Grievance Redressal System (IGMS)
+# AI-Powered Grievance Redressal System (IGRS)
 
 **A Next-Generation Citizen Grievance Redressal Platform powered by AI, NLP, and Predictive Analytics**
 
