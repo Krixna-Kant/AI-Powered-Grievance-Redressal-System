@@ -4,6 +4,7 @@ from app.routes import grievance
 from app.routes import grievance, analytics
 from app.auth.routes import router as auth_router
 from app.services.forecast_manager import load_forecast_models, retrain_forecast_models_async
+from app.routes import ai_router
 
 
 app = FastAPI(
@@ -26,6 +27,7 @@ app.add_middleware(
 app.include_router(auth_router)
 app.include_router(grievance.router)
 app.include_router(analytics.router)
+app.include_router(ai_router.router)
 
 
 # app.include_router(chatbot.router)
