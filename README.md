@@ -1,10 +1,10 @@
-# AI-Powered Grievance Management System (IGMS)
+# AI-Powered Grievance Redressal System (IGMS)
 
 **A Next-Generation Citizen Grievance Redressal Platform powered by AI, NLP, and Predictive Analytics**
 
 ## Overview
 
-The **AI-Powered Grievance Management System (IGMS)** is a modern, intelligent, and fully automated platform designed to streamline how citizens submit grievances and how administrations resolve them.
+The **AI-Powered Grievance Redressal System (IGMS)** is a modern, intelligent, and fully automated platform designed to streamline how citizens submit grievances and how administrations resolve them.
 
 Traditional grievance systems rely on lengthy forms, manual classification, delayed routing, and slow redressal.
 
