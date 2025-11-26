@@ -4,7 +4,7 @@
 
 ## Overview
 
-The **AI-Powered Grievance Redressal System (IGMS)** is a modern, intelligent, and fully automated platform designed to streamline how citizens submit grievances and how administrations resolve them.
+The **AI-Powered Grievance Redressal System (IGRS)** is a modern, intelligent, and fully automated platform designed to streamline how citizens submit grievances and how administrations resolve them.
 
 Traditional grievance systems rely on lengthy forms, manual classification, delayed routing, and slow redressal.
 
@@ -189,8 +189,8 @@ ml_pipeline/
 
 ### 1️⃣ Clone Repository
 ```bash
-git clone https://github.com/your-repo/IGMS.git
-cd IGMS
+git clone https://github.com/Krixna-Kant/AI-Powered-Grievance-Redressal-System
+cd AI-Grievance-Management-System
 ```
 
 ### 🖥️ Backend Setup
